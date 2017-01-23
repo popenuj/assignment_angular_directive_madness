@@ -4,9 +4,9 @@ DirectiveMadness.directive('copyright', function() {
     restrict: 'E',
     scope: {},
     transclude: true,
-    link: function(scope, element, attributes) {
+    link: function(scope, el, attributes) {
       var date = new Date();
-      angular.element("span").text(date.getFullYear());
+      el.find("span").text(date.getFullYear());
     }
   }
 });

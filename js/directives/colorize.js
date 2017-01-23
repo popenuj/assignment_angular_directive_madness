@@ -1,17 +1,18 @@
 
 DirectiveMadness.directive('colorize', function() {
   return {
-    templateUrl: ,
+    //templateUrl: ,
     restrict: 'A',
     scope: {
       color: "@",
       background: "@"
     },
     link: function(scope, element, attributes) {
-      angular.element(element).css({
-        "background-color": scope.background,
-        "color": scope.color
-      })
+      element.css({
+        backgroundColor: attributes.background,
+        color: attributes.color,
+        fontWeight: "bold"
+      });
     }
   }
 });
