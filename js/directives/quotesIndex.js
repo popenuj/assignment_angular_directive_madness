@@ -1,4 +1,4 @@
-/* globals DirectiveMadness */
+
 DirectiveMadness.directive('quotesIndex', function() {
   return {
     templateUrl: "/js/directives/quotesIndex.html",
