@@ -1,4 +1,7 @@
-<p>Hello</p>
-<ul>
-  <li ng-repeat="quote in quotes">{{ quote.message }} - <em>{{ quote.author }}</em></li>
+<p ng-if="!quotes.length">No quotes yet!</p>
+<ul ng-if="quotes.length">
+  <li ng-repeat="quote in quotes">
+    {{ quote.message }} - <em>{{ quote.author }}</em>
+    <button type="button" ng-click="deleteQuote(quote)">Delete</button>
+  </li>
 </ul>
