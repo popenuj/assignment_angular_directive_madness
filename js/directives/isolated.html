@@ -1,0 +1,14 @@
+<form>
+  <label>One Way
+    <input type="text" ng-model="oneWay">
+    <p> {{ oneWay }} </p>
+  </label><br>
+  <label>Two Way
+    <input type="text" ng-model="twoWay">
+    <p> {{ twoWay }} </p>
+  </label><br>
+</form>
+<form name="nameForm">
+  <input type="text" ng-model="name">
+  <button ng-click="sayHello(nameForm.name)">Submit</button>
+</form>
