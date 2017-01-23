@@ -4,9 +4,14 @@ DirectiveMadness.controller('QuotesCtrl',
     function($scope) {
       $scope.quotes = [];
 
-      $scope.submitQuote = function(formIsValid, formData) {
-        if(formIsValid) {
+      $scope.submitQuote = function(quoteForm, formIsValid, formData) {
+        if (formIsValid) {
           $scope.addQuote(formData);
+          // quoteForm.$setPristine();
+          quoteForm.$setUntouched();
+        } else {
+          console.log(quoteForm.message.$error);
+          console.log(quoteForm.author.$error); 
         }
       };
 
@@ -18,8 +23,6 @@ DirectiveMadness.controller('QuotesCtrl',
         });
         // Clear fields
         angular.element('input[type=text]').val('');
-        // Validations
-
       }
 
       $scope.deleteQuote = function(quote) {

@@ -7,3 +7,6 @@ input.ng-valid {
 input.ng-untouched {
   border: 1px solid #ddd;
 }
+.error-message {
+  color: red; 
+}

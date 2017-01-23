@@ -1,5 +1,14 @@
 <form name="quoteForm">
-  <label>Message: <input type="text" name="message" ng-model="formData.message" ng-untouched ng-minlength="2" required></label>
-  <label>Author: <input type="text" name="author" ng-model="formData.author" ng-untouched ng-minlength="2" ng-maxlength="32" required></label>
-  <input type="submit" ng-click="submitQuote(quoteForm.$valid, formData)">
+  <label>Message:
+    <input type="text" name="message" ng-model="formData.message" ng-untouched ng-minlength="2" required>
+    <span ng-if="quoteForm.message.$error.minlength" class="error-message">Quote is too short!</span>
+  </label><br>
+
+  <label>Author:
+    <input type="text" name="author" ng-model="formData.author" ng-untouched ng-minlength="2" ng-maxlength="32" required>
+    <span ng-if="quoteForm.author.$error.minlength" class="error-message">Author is too short!</span>
+    <span ng-if="quoteForm.author.$error.maxlength" class="error-message">Author is too long!</span>
+  </label><br>
+
+  <input type="submit" ng-click="submitQuote(quoteForm, quoteForm.$valid, formData)" ng-hide="quoteForm.$invalid">
 </form>
