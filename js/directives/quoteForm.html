@@ -1,5 +1,5 @@
-<form>
-  <label>Message: <input type="text" name="message" ng-model="quoteForm.message"></label>
-  <label>Author: <input type="text" name="author" ng-model="quoteForm.author"></label>
-  <input type="submit" ng-click="addQuote(quoteForm)">
+<form name="quoteForm">
+  <label>Message: <input type="text" name="message" ng-model="formData.message" ng-untouched ng-minlength="2" required></label>
+  <label>Author: <input type="text" name="author" ng-model="formData.author" ng-untouched ng-minlength="2" ng-maxlength="32" required></label>
+  <input type="submit" ng-click="submitQuote(quoteForm.$valid, formData)">
 </form>
